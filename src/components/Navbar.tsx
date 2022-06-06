@@ -21,11 +21,11 @@ const Navbar = () => {
         <nav>
             <div className="logo">
                 <i className="fa-solid fa-house-flood-water"></i>
-                <h4>Vonne App</h4>
+                <h4>Flood Montoring</h4>
             </div>
             <ul className={renderClassNavlink()}>
                 <li><NavLink className="tabLink" to="/live" onClick={handlenavlinkToggle}>Live Flood</NavLink></li>
-                <li><NavLink className="tabLink" to="/weather" onClick={handlenavlinkToggle}>Weather News</NavLink></li>
+                {/* <li><NavLink className="tabLink" to="/weather" onClick={handlenavlinkToggle}>Weather News</NavLink></li> */}
                 <li><NavLink className="tabLink" to="/history" onClick={handlenavlinkToggle}>History</NavLink></li>
                 <li><NavLink className="tabLink" to="/contact" onClick={handlenavlinkToggle}>Contact</NavLink></li>
 

@@ -5,6 +5,13 @@
 
 }
 
+:root {
+    --water-height: ;
+    --arrow-direction: ;
+    --arrow-orientation: ;
+    --warning-color: ;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -31,7 +38,7 @@ nav {
     margin-left: 500px;
 }
 
-.navlinks a{
+.navlinks a {
     color: #ffffff;
     font-weight: 600;
     font-size: 14px;
@@ -73,6 +80,8 @@ nav {
     display: none;
 }
 
+
+
 .active {
     font-size: 28px;
     font-weight: 800;
@@ -88,23 +97,313 @@ nav {
     padding-left: 12px;
 }
 
-.data {
-    color:crimson
+.current-warning {
+    animation: pulse 2s linear infinite;
+    border-radius: 0.5%;
+    box-shadow:
+        0 0 5px 5px #fff,
+        /* inner white */
+        0 0 10px 10px #f0f,
+        /* middle magenta */
+        0 0 10px 10px #0ff;
+    /* outer cyan */
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+
+}
+
+@keyframes pulse {
+    0% {
+
+        transform: scale(1);
+    }
+
+    25% {
+
+        transform: scale(1.025);
+    }
+
+    50% {
+
+        transform: scale(1.05);
+    }
+
+    50% {
+
+        transform: scale(1.025);
+    }
+
+    100% {
+
+        transform: scale(1);
+    }
+}
+
+.live-data-container {
+    display: flex;
+    justify-content: center;
+    border: 3px solid #050604;
+    box-shadow:
+        0 0 5px 5px var(--warning-color),
+        /* inner white */
+        0 0 20px 10px #f0f,
+        /* middle magenta */
+        0 0 10px 10px rgb(36, 137, 137);
+    /* outer cyan */
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+}
+
+.live-data-container>h1 {
+    margin-top: 40px;
+    margin-left: 50px;
+    min-height: 100px;
 }
 
 
-@media screen and (max-width: 768px){
+.data {
+    color: crimson
+}
+
+
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#container>div {
+    margin: 50px;
+    box-shadow:
+        0 0 5px 5px var(--warning-color),
+        /* inner white */
+        0 0 10px 5px #f0f,
+        /* middle magenta */
+        0 0 5px 5px rgb(36, 137, 137);
+    /* outer cyan */
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+}
+
+#linegraph {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: auto;
+
+}
+
+#glass {
+    width: 305px;
+    height: 400px;
+    position: relative;
+    border: 3px solid #050604;
+    background-image: url(unnamed.png);
+    background-size: 300px 400px;
+    background-repeat: no-repeat;
+}
+
+#glass-2 {
+    width: 305px;
+    height: 400px;
+    border: 3px solid #050604;
+    display: flex;
+    flex-direction: column;
+}
+
+#glass-3 {
+    width: 305px;
+    height: 400px;
+    border: 3px solid #050604;
+    display: flex;
+    flex-direction: column;
+}
+
+#glass-3>div {
+    height: 25%;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-warning {
+    background-color: gray;
+
+}
+
+.yellow-warning {
+    background-color: yellow;
+}
+
+.orange-warning {
+    background-color: orange;
+}
+
+.red-warning {
+    background-color: red;
+}
+
+.arrow-div {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    overflow: hidden;
+    box-shadow:
+        0 0 5px 5px var(--warning-color),
+        /* inner white */
+        0 0 10px 5px #f0f,
+        /* middle magenta */
+        0 0 5px 5px rgb(36, 137, 137);
+    /* outer cyan */
+    -webkit-transition: all 2s ease-out;
+    -moz-transition: all 2s ease-out;
+    -o-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+}
+
+.arrow {
+    background-image: url(arrow.jpg);
+    transform: var(--arrow-orientation);
+    background-repeat: repeat-y;
+    height: 197px;
+    width: 256px;
+    animation: arrowmove 3s linear infinite;
+}
+
+@keyframes arrowmove {
+    0% {
+        margin-top: 0px;
+    }
+
+    100% {
+        margin-top: var(--arrow-direction);
+    }
+
+}
+
+.flood-rate-details {
+    height: 50%;
+    display: flex;
+    text-align: center;
+    padding: 50px 0 50px;
+
+}
+
+#water {
+    background-image: url("bluewater.png");
+    position: absolute;
+    bottom: 0px;
+    width: 300px;
+    height: 0em;
+    -webkit-transition: all 3s ease-out;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    transition: all 3s ease-out;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 2px;
+
+}
+
+#water {
+    height: var(--water-height);
+    -webkit-transition: all 3s ease-out;
+    -moz-transition: all 3s ease-out;
+    -o-transition: all 3s ease-out;
+    transition: all 3s ease-out;
+}
+
+.Tabs {
+    width: 80%;
+    height: auto;
+    min-height: 525px;
+    background: #053742;
+    margin: 3.5rem auto 1.5rem;
+    padding: 2rem 1rem;
+    color: #E8F0F2;
+    border-radius: 2rem;
+
+    @media (max-width: 769px) {
+        padding: 2rem 0;
+    }
+
+}
+
+/* Tab Navigation */
+ul.nav {
+
+    margin: 0 auto 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #39A2DB;
+    border-radius: 2rem;
+    padding-left: 0px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}
+
+ul.nav li {
+    width: 50%;
+    padding: 1rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+
+ul.nav li:first-child {
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+ul.nav li:last-child {
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+
+}
+
+ul.nav li:hover {
+    background: rgba(50, 224, 196, 0.15);
+}
+
+ul.nav li.active {
+    background: teal;
+}
+
+/* Tab Content Styles */
+.FirstTab p,
+.SecondTab p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
     }
 
-    .hamburger-toggle{
+    .hamburger-toggle {
         display: flex;
         align-items: center;
         width: 20%;
         margin-left: 200px;
     }
-    .navlinks{
+
+    .navlinks {
         position: absolute;
         right: 0px;
         display: flex;
@@ -117,17 +416,27 @@ nav {
         background-color: #2da44e;
         transform: translateX(100%);
         transition: transform 0.2s ease-in;
+        z-index: 2;
     }
+
     .activeSidebar {
         transform: translateX(0%);
     }
 
-    .logo{
+
+    .logo {
         width: 100%;
         align-items: center;
         justify-content: center;
     }
+
     .logo i {
         align-items: center;
+    }
+
+
+
+    #water {
+        width: 100%;
     }
 }

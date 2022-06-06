@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Live from "./components/Live";
 import Contact from "./components/Contact";
 import Weathernews from "./components/Weathernews";
-import History from "./components/Historicaldata";
+import History from "./components/History";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 const Main = () => {
