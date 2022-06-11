@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 const Live = () => {
 
-    const BaseURL: string = "https://iotproject-sample.herokuapp.com/streams/live";
+    const BaseURL: string = "http://18.136.210.234/streams/live";
     let deviceid: string = "ESP32V1"
 
     interface floodData {
@@ -86,7 +86,7 @@ const Live = () => {
                     setNoWarning(true)
                 }
             }
-            if (newWarning === "Flood Level is Decreasing") {
+            if (newWarning === "Flood Level is Decreasing" || newWarning === "No Current Data for Flood Rate") {
                 if (redWarning === true) {
                     setRedWarning(true)
                     setOrangeWarning(true)
@@ -172,9 +172,9 @@ const Live = () => {
                     <div id="water" className="water" ></div>
                 </div>
                 <div id="glass-3" >
-                    <div className={`red-warning${redWarning ? "" : " current-warning"}`}>atleast  10cm increase in the last 60mins</div>
-                    <div className={`orange-warning${orangeWarning ? "" : " current-warning"}`}>atleast 10cm increase in the last 3 hours</div>
-                    <div className={`yellow-warning${yellowWarning ? "" : " current-warning"}`}>atleast 10cm increase in the last 8 hours</div>
+                    <div className={`red-warning${redWarning ? "" : " current-warning"}`}>atleast 10cm increase in less than 3 Hours</div>
+                    <div className={`orange-warning${orangeWarning ? "" : " current-warning"}`}>atleast 10cm increase in 3-6 Hours</div>
+                    <div className={`yellow-warning${yellowWarning ? "" : " current-warning"}`}>atleast 10cm increase in the last 6 Hours</div>
                     <div className={`no-warning${noWarning ? "" : " current-warning"}`} >Flood Level is Deacreasing/No Flood Detected</div>
                 </div>
                 <div id="glass-2" >

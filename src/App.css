@@ -107,10 +107,10 @@ nav {
         /* middle magenta */
         0 0 10px 10px #0ff;
     /* outer cyan */
-    -webkit-transition: all 2s ease-out;
-    -moz-transition: all 2s ease-out;
-    -o-transition: all 2s ease-out;
-    transition: all 2s ease-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
 
 }
 
@@ -127,10 +127,10 @@ nav {
 
     50% {
 
-        transform: scale(1.05);
+        transform: scale(1.035);
     }
 
-    50% {
+    75% {
 
         transform: scale(1.025);
     }
@@ -144,6 +144,8 @@ nav {
 .live-data-container {
     display: flex;
     justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
     border: 3px solid #050604;
     box-shadow:
         0 0 5px 5px var(--warning-color),
@@ -152,21 +154,26 @@ nav {
         /* middle magenta */
         0 0 10px 10px rgb(36, 137, 137);
     /* outer cyan */
-    -webkit-transition: all 2s ease-out;
-    -moz-transition: all 2s ease-out;
-    -o-transition: all 2s ease-out;
-    transition: all 2s ease-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 .live-data-container>h1 {
     margin-top: 40px;
     margin-left: 50px;
     min-height: 100px;
+
 }
 
 
 .data {
-    color: crimson
+    color: crimson;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 
@@ -185,10 +192,10 @@ nav {
         /* middle magenta */
         0 0 5px 5px rgb(36, 137, 137);
     /* outer cyan */
-    -webkit-transition: all 2s ease-out;
-    -moz-transition: all 2s ease-out;
-    -o-transition: all 2s ease-out;
-    transition: all 2s ease-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 #linegraph {
@@ -235,19 +242,22 @@ nav {
 
 .no-warning {
     background-color: gray;
-
+    transition: all 1.5s;
 }
 
 .yellow-warning {
     background-color: yellow;
+    transition: all 1.5s;
 }
 
 .orange-warning {
     background-color: orange;
+    transition: all 1.5s;
 }
 
 .red-warning {
     background-color: red;
+    transition: all 1.5s;
 }
 
 .arrow-div {
@@ -262,10 +272,10 @@ nav {
         /* middle magenta */
         0 0 5px 5px rgb(36, 137, 137);
     /* outer cyan */
-    -webkit-transition: all 2s ease-out;
-    -moz-transition: all 2s ease-out;
-    -o-transition: all 2s ease-out;
-    transition: all 2s ease-out;
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 .arrow {
@@ -275,6 +285,7 @@ nav {
     height: 197px;
     width: 256px;
     animation: arrowmove 3s linear infinite;
+    transition: transform 1.5s;
 }
 
 @keyframes arrowmove {
@@ -302,23 +313,35 @@ nav {
     bottom: 0px;
     width: 300px;
     height: 0em;
-    -webkit-transition: all 3s ease-out;
-    -moz-transition: all 3s ease-out;
-    -o-transition: all 3s ease-out;
-    transition: all 3s ease-out;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 2px;
-
+    animation: fadeIn 2s infinite;
 }
+
 
 #water {
     height: var(--water-height);
-    -webkit-transition: all 3s ease-out;
-    -moz-transition: all 3s ease-out;
-    -o-transition: all 3s ease-out;
-    transition: all 3s ease-out;
+    -webkit-transition: all 3s ease-in-out;
+    -moz-transition: all 3s ease-in-out;
+    -o-transition: all 3s ease-in-out;
+    transition: all 3s ease-in-out;
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.93;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.93;
+    }
+}
+
 
 .Tabs {
     width: 80%;
