@@ -19,6 +19,11 @@ const TableTab = () => {
 
         },
         {
+            name: 'Flood Rate',
+            selector: row => row.data["other sensor data"],
+
+        },
+        {
             name: 'timestamp',
             selector: row => row.created_at,
             sortable: true,
